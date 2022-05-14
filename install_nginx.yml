@@ -1,0 +1,11 @@
+---
+- name: build hobby servers
+  hosts: aws_hobbyservers
+  become: yes
+  become_method: sudo
+  remote_user: rocky
+  tasks:
+    - name: install nginx
+      dnf:
+        name: nginx
+        state: latest
